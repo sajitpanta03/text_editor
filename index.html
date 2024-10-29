@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Advanced Text Editor</title>
+</head>
+
+<body>
+    <div class="editor-toolbar">
+        <button onclick="formatText('bold')"><img src="./icons/icons8-bold-30.png" alt="bold"
+                style="height: 20px; width: auto;"></button>
+        <button onclick="formatText('italic')"><img src="./icons/icons8-italics-50.png" alt="bold"
+                style="height: 20px; width: auto;"></button>
+        <button onclick="formatText('underline')"><img src="./icons/icons8-underline-50.png" alt="bold"
+                style="height: 20px; width: auto;"></button>
+        <button onclick="formatText('justifyLeft')"><img src="./icons/icons8-left-30.png" alt="bold"
+                style="height: 20px; width: auto;"></button>
+        <button onclick="formatText('justifyCenter')"><img src="./icons/icons8-center-24.png" alt="bold"
+                style="height: 20px; width: auto;"></button>
+        <button onclick="formatText('justifyRight')"><img src="./icons/icons8-right-30.png" alt="bold"
+                style="height: 20px; width: auto;"></button>
+
+        <select onchange="changeFont(this.value)" style="height: 42px; width: 75px;">
+            <option value="">Font</option>
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+
+        <select onchange="changeFontSize(this.value)" style="height: 42px; width: 59px;">
+            <option value="">Aa</option>
+            <option value="1">Small</option>
+            <option value="3">Normal</option>
+            <option value="5">Large</option>
+        </select>
+
+
+        <input type="color" id="color" onchange="changeTextColor(this.value)">
+
+        <button onclick="formatText('insertOrderedList')"><img src="./icons/icons8-list-50.png" alt="bold"
+                style="height: 20px; width: auto;"></button>
+        <button onclick="formatText('insertUnorderedList')">UL</button>
+
+
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="insertImage(event)">
+
+        <button onclick="document.getElementById('imageInput').click();">
+            <img src="./icons/icons8-photo-24.png" alt="insert photo" style="height: 20px; width: auto;">
+        </button>
+        <button onclick="formatText('formatBlock', 'h1')">H1</button>
+        <button onclick="formatText('formatBlock', 'h2')">H2</button>
+
+        <button onclick="undo()"><img src="./icons/icons8-undo-30.png" alt="bold"
+                style="height: 20px; width: auto;"></button>
+
+    </div>
+    <div id="editor" contenteditable="true" class="editor"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
